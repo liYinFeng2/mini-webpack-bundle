@@ -1,0 +1,26 @@
+{
+  "name": "mini-webpack-bundle",
+  "version": "1.0.0",
+  "description": "手动实现webpack的bundle打包功能",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liYinFeng2/mini-webpack-bundle.git"
+  },
+  "author": "李银凤",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liYinFeng2/mini-webpack-bundle/issues"
+  },
+  "homepage": "https://github.com/liYinFeng2/mini-webpack-bundle#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/parser": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/traverse": "^7.7.4",
+    "webpack": "^4.41.4"
+  }
+}
