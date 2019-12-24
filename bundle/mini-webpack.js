@@ -1,8 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const parser = require('@babel/parser')
-const traverse = require('@babel/traverse').default
-const { transformFromAst } = require('@babel/core')
+const { parse, traverse, transformFromAst } = require('@babel/core')
 
 module.exports = class Webpack{
   constructor (options) {
@@ -40,9 +38,11 @@ module.exports = class Webpack{
    */
   parse (entryFile) {
     const content = fs.readFileSync(entryFile, 'utf-8')
-    const ast = parser.parse(content, {
+
+    const ast = parse(content, {
       sourceType: 'module'
     })
+    
     return ast
   }
 
@@ -59,6 +59,7 @@ module.exports = class Webpack{
         dependencies[node.source.value] = './'+path.join(path.dirname(entryFile), node.source.value)
       }
     })
+
     
     // 2. 使用对应的扩展babel进行响应的扩展
     const { code } = transformFromAst(ast, null, {
